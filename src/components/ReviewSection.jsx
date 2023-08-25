@@ -16,7 +16,7 @@ const ReviewSection = () => {
             </div>
 
             <div className=''>
-                <div className=' bg-yellow-50 ml-4 lg:ml-24 w-[400px] p-6 cursor-pointer hover:scale-105 ease-in-out duration-200 '>
+                <div className=' bg-yellow-50 ml-4 lg:ml-24 w-[350px] p-6 cursor-pointer hover:scale-105 ease-in-out duration-200 '>
                     <div className='flex gap-6 mb-4'>
 
                         <div>
