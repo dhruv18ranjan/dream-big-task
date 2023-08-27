@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "../assets/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi"; // Add this import for the hamburger icon
@@ -11,15 +11,25 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const [academiaDrop, setAcademiaDrop] = useState(false);
+    const [resourcesDrop, setResourcesDrop] = useState(false);
+
+    const handleAcademiaDrop=()=>{
+        setAcademiaDrop(!academiaDrop);
+        console.log("hehe")
+    }
+
+    useEffect(()=>{
+        console.log("ok");
+    })
+
     return (
         <div className='p-4 w-[97%] mr-4 z-10 rounded-lg fixed bg-white border-2'>
 
-          
-
             <div className='flex flex-wrap m-2 justify-between'>
 
-                  {/* Hamburger menu button */}
-            <button
+                {/* Hamburger menu button */}
+                <button
                     className='lg:hidden text-2xl mt-2'
                     onClick={toggleMobileMenu}
                 >
@@ -30,15 +40,21 @@ const Navbar = () => {
                     <img className='cursor-pointer' src={logo} alt="" />
                 </div>
 
-                
+
 
                 {/* Mobile menu */}
                 <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 right-0 bg-white border-2 rounded-lg mt-2`}>
                     <div className='flex flex-col p-4'>
-                        <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Academia</span>
+                        <div>
+                            <span className='hover:text-green-600 ease-out duration-300 cursor-pointer' >Academia</span>
+                         
+                        </div>
                         <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>CTF Warriors</span>
                         <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Business Solutions</span>
-                        <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Resources</span>
+                        <div>
+                            <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'  >Resources</span>
+                         
+                        </div>
                     </div>
                     <div className='flex justify-center align-middle gap-8 p-4'>
                         <AiOutlineShoppingCart className='text-xl mt-3' />
@@ -49,10 +65,35 @@ const Navbar = () => {
 
                 {/* Desktop navigation */}
                 <div className='hidden lg:flex justify-center align-middle gap-10 m-2'>
-                    <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Academia</span>
+                    <div>
+
+                    <span className='hover:text-green-600 ease-out duration-300 cursor-pointer' onMouseEnter={()=>setAcademiaDrop(true)} onMouseLeave={()=>setAcademiaDrop(false)}>Academia</span>
+                    {  academiaDrop &&
+                    <div className=' bg-white absolute top-[45px] bg-transparent ease-in-out duration-300' onMouseEnter={()=>setAcademiaDrop(true)} onMouseLeave={()=>setAcademiaDrop(false)} >
+                                 <div className=' w-[250px] h-max relative rounded-lg top-[30px] border-2 p-4 pt-8 pb-6  flex flex-col bg-white text-base'>
+                                 <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Skillup Programs</p>
+                                 <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Job Track Courses</p>
+                             </div>
+                             </div>
+                            }
+                            </div>
                     <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>CTF Warriors</span>
                     <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Business Solutions</span>
-                    <span className='hover:text-green-600 ease-out duration-300 cursor-pointer'>Resources</span>
+                    <div>
+                    <span className='hover:text-green-600 ease-out duration-300 cursor-pointer' onMouseEnter={()=>setResourcesDrop(true)} onMouseLeave={()=>setResourcesDrop(false)} >Resources</span>
+                    {
+                                resourcesDrop && 
+                                <div className=' bg-white absolute top-[45px] bg-transparent' onMouseEnter={()=>setResourcesDrop(true)} onMouseLeave={()=>setResourcesDrop(false)}>
+                                <div className=' w-[250px] h-max relative rounded-lg top-[30px] border-2 p-4 pt-8 pb-6  flex flex-col bg-white text-base' >
+                                    <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>About Us</p>
+                                    <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Contact Us</p>
+                                    <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Blogs</p>
+                                    <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Cyberyami Forum </p>
+                                    <button className=' bg-blue-500 p-2 text-white mt-2'> Join Discord</button>
+                                </div>
+                                </div>
+                            }
+                    </div>
                 </div>
 
                 <div className='flex justify-center align-middle gap-8'>
