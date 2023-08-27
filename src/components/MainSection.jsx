@@ -8,7 +8,7 @@ import {motion} from "framer-motion";
 const MainSection = () => {
   return (
 
-<div className=' flex flex-wrap lg:flex-row gap-5 m-10 lg:ml-24'>
+<div className=' flex flex-wrap lg:flex-row md:flex-row gap-5 m-10 lg:ml-24'>
           <motion.div initial="hidden" whileInView="visible"
                     viewport={{ once: false, amount: 0.5 }}
                     transition={{ duration: 0.5 }}
