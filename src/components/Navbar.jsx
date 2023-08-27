@@ -14,14 +14,7 @@ const Navbar = () => {
     const [academiaDrop, setAcademiaDrop] = useState(false);
     const [resourcesDrop, setResourcesDrop] = useState(false);
 
-    const handleAcademiaDrop=()=>{
-        setAcademiaDrop(!academiaDrop);
-        console.log("hehe")
-    }
 
-    useEffect(()=>{
-        console.log("ok");
-    })
 
     return (
         <div className='p-4 w-[97%] mr-4 z-10 rounded-lg fixed bg-white border-2'>
