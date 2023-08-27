@@ -62,7 +62,7 @@ const Navbar = () => {
 
                     <span className='hover:text-green-600 ease-out duration-300 cursor-pointer' onMouseEnter={()=>setAcademiaDrop(true)} onMouseLeave={()=>setAcademiaDrop(false)}>Academia</span>
                     {  academiaDrop &&
-                    <div className=' bg-white absolute top-[45px] bg-transparent ease-in-out duration-300' onMouseEnter={()=>setAcademiaDrop(true)} onMouseLeave={()=>setAcademiaDrop(false)} >
+                    <div style={{backgroundColor:"transparent"}} className=' bg-white absolute top-[45px] bg-transparent ease-in-out duration-300' onMouseEnter={()=>setAcademiaDrop(true)} onMouseLeave={()=>setAcademiaDrop(false)} >
                                  <div className=' w-[250px] h-max relative rounded-lg top-[30px] border-2 p-4 pt-8 pb-6  flex flex-col bg-white text-base'>
                                  <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Skillup Programs</p>
                                  <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Job Track Courses</p>
@@ -76,7 +76,7 @@ const Navbar = () => {
                     <span className='hover:text-green-600 ease-out duration-300 cursor-pointer' onMouseEnter={()=>setResourcesDrop(true)} onMouseLeave={()=>setResourcesDrop(false)} >Resources</span>
                     {
                                 resourcesDrop && 
-                                <div className=' bg-white absolute top-[45px] bg-transparent' onMouseEnter={()=>setResourcesDrop(true)} onMouseLeave={()=>setResourcesDrop(false)}>
+                                <div style={{backgroundColor:"transparent"}} className=' bg-white absolute top-[45px] bg-transparent' onMouseEnter={()=>setResourcesDrop(true)} onMouseLeave={()=>setResourcesDrop(false)}>
                                 <div className=' w-[250px] h-max relative rounded-lg top-[30px] border-2 p-4 pt-8 pb-6  flex flex-col bg-white text-base' >
                                     <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>About Us</p>
                                     <p className='pl-4 hover:cursor-pointer hover:bg-green-100 p-4 rounded-md'>Contact Us</p>
